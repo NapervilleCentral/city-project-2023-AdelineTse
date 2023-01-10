@@ -13,13 +13,12 @@
 
 public class LineUp extends JComponent //implements Runnable
 {
-   private final int APPLET_WIDTH = 400;    //Size constants
-   private final int APPLET_HEIGHT = 150;
+
    private final int HEIGHT_MIN = 100;
    private final int VARIANCE = 45;
    Random generator = new Random();
    //Graphics page;
-
+    
    
    private StickFigure figure1,figure2, figure3, figure4;
    private Floor ground;
@@ -37,7 +36,8 @@ public class LineUp extends JComponent //implements Runnable
       h3 = HEIGHT_MIN + generator.nextInt(VARIANCE);
       h4 = HEIGHT_MIN + generator.nextInt(VARIANCE);
 
-      
+      //If I increase x move object?
+      //If I increase y move object?
       figure1 = new StickFigure (100, 150, Color.red, h1);
       //x, y, color, height
       figure2 = new StickFigure(150, 150, Color.green, h2);

@@ -33,7 +33,7 @@ public class Apple implements Runnable
     {
         try{
             System.out.printf("%s is sleeping for %d\n",name,time);
-            Thread.sleep(time);
+            Thread.sleep(time);//"pause" the process and it's by milliseconds, 1000 = 1 sec
             System.out.printf("%s is done\n",name);
         }catch (Exception e){}
   

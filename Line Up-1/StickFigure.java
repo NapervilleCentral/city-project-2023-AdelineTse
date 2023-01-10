@@ -87,8 +87,9 @@ public class StickFigure extends JComponent implements Runnable
                                      //y needs to move, not height.
 
           page.setColor (color);
+          //                    start her and   draw to     
           //                 x     y    h  w
-          page.drawOval(baseX-10, top, 20, 20);// head
+          page.drawRect(baseX-10, top, 40, 20);// head
 
           page.drawLine(baseX, top+20, baseX, baseY-30);// trunk
                                     //remember, increase y actually moves closer to bottom
@@ -108,7 +109,7 @@ public class StickFigure extends JComponent implements Runnable
             int newHeight = 100 + generator.nextInt(45);
             height = newHeight;
             try{
-                Thread.sleep(17);
+                Thread.sleep(17);//30 fps
             }catch (Exception e){}
 
             System.out.print(height);

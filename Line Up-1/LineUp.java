@@ -13,8 +13,7 @@
 
 public class LineUp extends JComponent //implements Runnable
 {
-   private final int APPLET_WIDTH = 400;    //Size constants
-   private final int APPLET_HEIGHT = 150;
+   
    private final int HEIGHT_MIN = 100;
    private final int VARIANCE = 45;
    Random generator = new Random();
@@ -64,6 +63,10 @@ public class LineUp extends JComponent //implements Runnable
 
    //-----------------------------------------------------------------
    //  Paints the stick figures on the applet.
+   /*#
+    * You NEED to make paintComponent
+    * */
+    
    //-----------------------------------------------------------------
    public void paintComponent(Graphics g)
     {
