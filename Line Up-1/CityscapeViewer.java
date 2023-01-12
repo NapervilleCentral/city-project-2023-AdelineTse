@@ -26,7 +26,7 @@ public class CityscapeViewer
         //size
         frame.setSize(400 /* x */, 300 /* y */);
         //name
-        frame.setTitle("Cityscape");
+        frame.setTitle("The city");
         frame.setBackground(Color.red);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         

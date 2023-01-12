@@ -23,7 +23,7 @@ public class LineUp extends JComponent //implements Runnable
    private StickFigure figure1,figure2, figure3, figure4;
    private Floor ground;
    private int running = 0;
-
+    private Poly1 aShape;
    //-----------------------------------------------------------------
    //  Creates several stick figures with varying characteristics.
    //-----------------------------------------------------------------
@@ -44,14 +44,17 @@ public class LineUp extends JComponent //implements Runnable
       figure4 = new StickFigure(250, 150, Color.yellow, h4);
 
       ground = new Floor();
-
+       aShape = new Poly1(new Color(175, 175, 175));  
       Thread t1 = new Thread(ground);
       t1.start();
       Thread t2 = new Thread(figure2);
       t2.start();
-      //Thread t3 = new Thread(figure3);
-      //t3.start();
-
+      
+      
+      Thread t3 = new Thread(figure3);
+      t3.start();
+       Thread t4 = new Thread(aShape);
+      t4.start();
 
       //setBackground (Color.black); //sets the color of background
       //setSize (APPLET_WIDTH, APPLET_HEIGHT); //Sets up applet window

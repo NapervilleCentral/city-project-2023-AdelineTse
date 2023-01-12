@@ -20,10 +20,10 @@ public class Floor extends JComponent implements Runnable
      */
     public Floor()
     {
-        x = 50;
-        y = 125;
-        w = 250;
-        h = 50;
+        this.x = 50;
+        this.y = 10;
+        this.w = 250;
+        this.h = 200;
     }
 
     @Override
@@ -68,6 +68,14 @@ public class Floor extends JComponent implements Runnable
        {
           page.setColor(Color.black);
           page.fillRect(x, y, w, h);
+          
+          page.setColor(Color.yellow);
+          page.fillRect(x+10, y+3,10, 40);
+          
+          //change the y value to move the row down
+          Color sqColor = new Color(240, 30, 100);
+              page.setColor(sqColor);
+              page.fillRect(x+10, y + 10, 100, 10);
        }
        
     public void run()
