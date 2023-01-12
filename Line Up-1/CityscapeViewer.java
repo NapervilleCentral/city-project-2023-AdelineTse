@@ -27,12 +27,8 @@ public class CityscapeViewer
         frame.setSize(400 /* x */, 300 /* y */);
         //name
         frame.setTitle("The city");
-        frame.setBackground(Color.red);
+      
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-        
-        int h1 = 100 + (int)(Math.random()*45);
-        int h2 = 100 + (int)(Math.random()*45);
         
         // a frame contains a single component; create the Cityscape component and add it to the frame
         CityscapeComponent component = new CityscapeComponent();

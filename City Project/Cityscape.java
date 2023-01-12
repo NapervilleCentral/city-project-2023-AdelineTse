@@ -6,19 +6,24 @@ import javax.swing.JComponent;
  * Class that creates instances of the classes that comprise the cityscape and delegates drawing the
  *  cityscape to these object.
  * 
- * @author gcschmit
+ * @author Adeline
  * @version 18 July 2014
  */
 public class Cityscape extends JComponent
 {
     // define the objects in your Cityscape as instance variables
     // ...
+    private final int HEIGHT_MIN = 100;
+    private final int VARIANCE = 45;
     
-    
-    
+    private Sky bluesky;
     // define the Cityscape contructor and intiailize all instance variables
     // ...
     
+    public Cityscape()
+    {
+        bluesky = new Sky(400,400,  new Color(0, 0, 255, 50);
+    }
     
     /**
      * This method is invoked by the Java Run-Time whenever the component needs to be redrawn.
@@ -47,12 +52,12 @@ public class Cityscape extends JComponent
     {
         // update the objects in the cityscape so they are animated
         // ...
-        
-        
-        
         // request that the Java Runtime repaints this component by invoking its paintComponent method
         //  do not explicitly invoke the paintComponent method
         repaint();
     }
-
+    
+    public void run()
+    {
+    }
 }

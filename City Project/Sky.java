@@ -5,25 +5,25 @@
     import java.awt.Graphics2D;
     import javax.swing.JComponent;
 /**
- * Write a description of class Floor here.
- * 
- * @author (your name) 
+ * Write a description of class Sky here.
+ *
+ * @author (your name)
  * @version (a version number or a date)
  */
-public class Floor extends JComponent implements Runnable
+public class Sky extends JComponent implements Runnable
 {
-    // instance variables - replace the example below with your own
+   // instance variables - replace the example below with your own
     private int x,y,w,h;
 
     /**
      * Constructor for objects of class Floor
      */
-    public Floor()
+    public Sky()
     {
         this.x = 50;
-        this.y = 10;
-        this.w = 250;
-        this.h = 200;
+        this.y = 50;
+        this.w = 500;
+        this.h = 600;
     }
 
     @Override
@@ -65,33 +65,31 @@ public class Floor extends JComponent implements Runnable
        {
           page.setColor(Color.black);
           page.fillRect(x, y, w, h);
-          
-          page.setColor(Color.yellow);
-          page.fillRect(x+10, y+3,10, 40);
+
           
           //change the y value to move the row down
-          Color sqColor = new Color(240, 30, 100);
+          Color sqColor = new Color(0, 0, 255);
               page.setColor(sqColor);
               page.fillRect(x+10, y + 10, 100, 10);
        }
        
-    public void run()
-    {
-        int running  = 0;
-    while(true){
-        
-        if(running % 2 == 0)
-            x +=20;
-        else
-            x -= 20;
-        running ++;
-            try{
-            Thread.sleep(17);
-        }catch (Exception e){}
-        
-        System.out.print(x+"-----------------");
-        //repaint();
-    }
-  
+        public void run()
+        {
+            int running  = 0;
+        while(true){
+            
+            if(running % 2 == 0)
+                x +=20;
+            else
+                x -= 20;
+            running ++;
+                try{
+                Thread.sleep(17);
+            }catch (Exception e){}
+            
+            System.out.print(x+"-----------------");
+            //repaint();
+        }
+      
     }
 }
