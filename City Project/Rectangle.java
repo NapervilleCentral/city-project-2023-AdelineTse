@@ -10,33 +10,24 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Sky extends JComponent implements Runnable
+public class Rectangle extends JComponent implements Runnable
 {
    // instance variables - replace the example below with your own
     private int x,y,w,h;
-
+    private Color color;
     /**
      * Constructor for objects of class Floor
      */
-    public Sky()
+    public Rectangle(int center, int bottom, int width, int height, Color shade)
     {
-        this.x = 50;
-        this.y = 50;
-        this.w = 500;
-        this.h = 600;
+        this.x = center;
+        this.y = bottom;
+        this.w = width;
+        this.h = height;
+        this.color = shade;
     }
-
-    @Override
-    public void paintComponent(Graphics g)
-    {
-        Graphics2D g2 = (Graphics2D) g;
-        
-        // invoke the draw method 
-        // ...
-        draw(g2);
-        
-        
-    }
+    
+   
     
     /**
      * Animate the cityscape by updating the objects such that they appear to be animated when
@@ -63,14 +54,14 @@ public class Sky extends JComponent implements Runnable
        //-----------------------------------------------------------------
        public void draw (Graphics2D page)
        {
-          page.setColor(Color.black);
+          page.setColor(this.color);
           page.fillRect(x, y, w, h);
 
           
           //change the y value to move the row down
-          Color sqColor = new Color(0, 0, 255);
-              page.setColor(sqColor);
-              page.fillRect(x+10, y + 10, 100, 10);
+          //Color sqColor = new Color(0, 0, 255);
+          //page.setColor(sqColor);
+          //page.fillRect(x+10, y + 10, 100, 10);
        }
        
         public void run()

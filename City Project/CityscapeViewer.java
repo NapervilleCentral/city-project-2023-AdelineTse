@@ -1,6 +1,8 @@
 import javax.swing.JFrame;
 import java.awt.*;
-
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import javax.swing.JComponent;
 /**
  * Class that contains the main method for the program and creates the frame containing the component.
  * 
@@ -31,10 +33,10 @@ public class CityscapeViewer
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         // a frame contains a single component; create the Cityscape component and add it to the frame
-        CityscapeComponent component = new CityscapeComponent();
+        Cityscape thisCity = new Cityscape();
         
         //when to set visiblw
-        LineUp row = new LineUp();
+        Cityscape row = new Cityscape();
         //frame.add(component);
         frame.add(row);
         

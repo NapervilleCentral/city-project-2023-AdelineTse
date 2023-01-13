@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Fence
+comment1.params=center\ bottom\ shade
+comment1.target=Fence(int,\ int,\ java.awt.Color)
+comment2.params=g
+comment2.target=void\ paintComponent(java.awt.Graphics)
+comment2.text=\r\n\ This\ method\ is\ invoked\ by\ the\ Java\ Run-Time\ whenever\ the\ component\ needs\ to\ be\ redrawn.\r\n\ It\ does\ not\ need\ to\ be\ invoked\ explicitly.\r\n\r\n\ @param\ g\ a\ reference\ to\ the\ Graphics\ object\ used\ for\ all\ drawing\ operations\r\n\r\n
+comment3.params=
+comment3.target=void\ nextFrame()
+comment3.text=\r\n\ Animate\ the\ cityscape\ by\ updating\ the\ objects\ such\ that\ they\ appear\ to\ be\ animated\ when\r\n\ \ \ \ \ \ they\ are\ next\ drawn.\r\n\r\n
+comment4.params=page
+comment4.target=void\ draw(java.awt.Graphics2D)
+comment5.params=
+comment5.target=void\ run()
+numComments=6
