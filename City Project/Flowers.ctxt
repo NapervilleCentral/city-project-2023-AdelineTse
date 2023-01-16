@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Flowers
+comment0.text=\r\n\ \ Flowers\r\n\r\n
+comment1.params=
+comment1.target=Flowers()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Flowers\r\n
+comment2.params=page
+comment2.target=void\ draw(java.awt.Graphics2D)
+comment3.params=
+comment3.target=void\ run()
+numComments=4

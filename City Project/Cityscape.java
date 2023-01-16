@@ -18,14 +18,19 @@ public class Cityscape extends JComponent
     private final int VARIANCE = 45;
     
     private Rectangle bluesky, grass;
+    private Fence bunnyfence;
+    private House bunnyHouse;
+    private Flowers carrotsAndFlowers;
     // define the Cityscape contructor and intiailize all instance variables
     // ...
     
     public Cityscape()
     {
-        bluesky = new Rectangle(30,30, 600, 500, new Color(116,157,161));
-        grass = new Rectangle(30, 400, 600, 200, new Color(180,190,137));
-        //chickfence = new Fence(30, 400, new Color(243, 226, 186));
+        bluesky = new Rectangle(30,30, 600, 500, new Color(186, 223, 232));
+        grass = new Rectangle(30, 400, 600, 300, new Color(173, 227, 102));
+        bunnyfence = new Fence(30, 330, new Color(255, 249, 227), new Color (255, 219, 128), new Color(255, 192, 173), new Color(255, 226, 214));
+        bunnyHouse = new House(280, 310, new Color(233, 242, 247), new Color(204, 226, 240), new Color(101, 147, 173), new Color(133, 172, 201), new Color(178, 196, 141), new Color(66, 59, 43));
+        carrotsAndFlowers = new Flowers();    
     }
     
     /**
@@ -46,6 +51,13 @@ public class Cityscape extends JComponent
         bluesky.draw(page);
         grass.draw(page);
         
+        page.setStroke(new BasicStroke(8));
+        bunnyfence.draw(page);
+        
+        page.setStroke(new BasicStroke(4));
+        bunnyHouse.draw(page);
+        
+        carrotsAndFlowers.draw(page);
     }
     
     /**

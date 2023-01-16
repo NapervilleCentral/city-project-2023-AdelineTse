@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
+ 
 /**
  * Class that contains the main method for the program and creates the frame containing the component.
  * 
@@ -28,7 +29,7 @@ public class CityscapeViewer
         //size
         frame.setSize(400 /* x */, 300 /* y */);
         //name
-        frame.setTitle("The city");
+        frame.setTitle("Bunny farm");
       
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
