@@ -8,49 +8,41 @@
     import javax.imageio.ImageIO;
     import java.util.Random;
 /**
- *  Flowers
-
+ * Write a description of class Bunny here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
  */
-public class Flowers extends JComponent //implements Runnable
+public class Bunny
 {
-    private BufferedImage flowers, flowers2, carrots;
-    private int x, y, randomGraphX, randomGraphY;
+    private BufferedImage fluffy, ophelia;
     private int running = 0;
-    
+    private int x, y, randomGraphX, randomGraphY;
     Random rand = new Random();
     /**
-     * Constructor for objects of class Flowers
+     * Constructor for objects of class Bunny
      */
-    public Flowers()
+    public Bunny()
     {
-        x = 100;
-        y = 100;
+     
+       
+        
         try {
-            flowers = ImageIO.read(new File("flowers.png"));
+            fluffy = ImageIO.read(new File("fluffy.png"));
         }
         catch (IOException e) {}
         try {
-            carrots = ImageIO.read(new File("carrots.PNG"));
+            ophelia = ImageIO.read(new File("ophelia.PNG"));
         }
         catch (IOException e) {}
-        try {
-            flowers2 = ImageIO.read(new File("flowers2.png"));
-        }
-        catch (IOException e) {}
+    
     }
-
     public void draw (Graphics2D page)
     {
         
-        page.drawImage(carrots, 30, 408, null);
-        page.drawImage(carrots, 90, 420, null);
-        page.drawImage(carrots, 150, 408, null);
-        page.drawImage(carrots, 210, 420, null);
-        
-        
-        page.drawImage(flowers, 490, 540, null);
-        page.drawImage(flowers2, 36, 530, null);
-        page.drawImage(flowers, 120, 580, null);
+        page.drawImage(fluffy, 30, 408, null);
+        page.drawImage(ophelia, 90, 420, null);
+       
         
     }
     
@@ -69,7 +61,7 @@ public class Flowers extends JComponent //implements Runnable
                 }catch (Exception e){}
                 
                 System.out.print(x+"-----------------");
-                repaint();
+                //repaint();
             }
       
         }

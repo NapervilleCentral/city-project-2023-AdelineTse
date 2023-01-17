@@ -27,7 +27,7 @@ public class CityscapeViewer
         JFrame frame = new JFrame();
         
         //size
-        frame.setSize(400 /* x */, 300 /* y */);
+        frame.setSize(700 /* x */, 800 /* y */);
         //name
         frame.setTitle("Bunny farm");
       
