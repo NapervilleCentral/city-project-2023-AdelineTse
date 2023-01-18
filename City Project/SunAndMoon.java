@@ -13,13 +13,18 @@ public class SunAndMoon extends JComponent implements Runnable
 {
     // instance variables - replace the example below with your own
     private double theta;
-
+    private Color sun, sunOutline, moon;
+    private double x, y;
+    
     /**
      * Constructor for objects of class SunAndMoon
      */
-    public SunAndMoon()
+    public SunAndMoon(Color sun, Color sunOutline, Color moon)
     {
-        
+        this.sun = sun;
+        this.moon = moon;
+        this.sunOutline = sunOutline;
+        //bluesky = new Rectangle(30,30, 600, 500, new Color(186, 223, 232));
     }
     public void nextFrame()
     {
@@ -34,7 +39,21 @@ public class SunAndMoon extends JComponent implements Runnable
     public void draw(Graphics2D page)
     {
         // put your code here
-        page.fillOval((int) (250 * Math.sin(theta)) + 3700, (int)(200 * Math.cos(theta)) + 210, 50, 50);
+        page.setColor(this.sun);
+        x = (250* Math.sin(theta))+300;
+        y = (250 * Math.cos(theta)) + 300;
+        page.fillOval((int)x, (int)y, 50, 50);
+        
+        if (y > 100)
+        {
+            page.setColor(this.sun);
+            
+        }
+        if (y < 100)
+        {
+            page.setColor(this.moon);
+        }
+        //page.fillOval((int) (Math.sin(theta)), (int)(theta), 50, 50);
     }
      
     
@@ -47,7 +66,7 @@ public class SunAndMoon extends JComponent implements Runnable
                 Thread.sleep(17);
             }catch (Exception e){}
             
-            System.out.print("-----------------");
+            System.out.print("????????????????????????");
             
         }
   
