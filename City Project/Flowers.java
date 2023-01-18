@@ -6,7 +6,7 @@
     import javax.swing.JComponent;
     import java.awt.image.BufferedImage;
     import javax.imageio.ImageIO;
-    import java.util.Random;
+    
 /**
  *  Flowers
 
@@ -48,10 +48,12 @@ public class Flowers extends JComponent //implements Runnable
         page.drawImage(carrots, 210, 420, null);
         
         
-        page.drawImage(flowers, 490, 540, null);
-        page.drawImage(flowers2, 36, 530, null);
-        page.drawImage(flowers, 120, 580, null);
+        page.drawImage(flowers, 500, 540, null);
+        page.drawImage(flowers, 36, 530, null);
+        page.drawImage(flowers, 90, 580, null);
         
+        page.drawImage(flowers2, 500, 430, null);
+        page.drawImage(flowers2, 350, 540, null);
     }
     
     public void run()

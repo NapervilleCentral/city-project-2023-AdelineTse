@@ -19,33 +19,37 @@ public class SunAndMoon extends JComponent implements Runnable
      */
     public SunAndMoon()
     {
-        // initialise instance variables
-        x = 0;
+        
     }
-
+    public void nextFrame()
+    {
+        repaint();
+    }
     /**
      * An example of a method - replace this comment with your own
      *
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int draw(Graphics2D page)
+    public void draw(Graphics2D page)
     {
         // put your code here
         page.fillOval((int) (250 * Math.sin(theta)) + 3700, (int)(200 * Math.cos(theta)) + 210, 50, 50);
     }
- public void run()
-        {
-                int running  = 0;
-            while(true){
-                theta++;
-                    try{
-                    Thread.sleep(17);
-                }catch (Exception e){}
-                
-                System.out.print("-----------------");
-                //repaint();
-            }
-      
+     
+    
+    public void run()
+    {
+            int running  = 0;
+        while(true){
+            theta++;
+                try{
+                Thread.sleep(17);
+            }catch (Exception e){}
+            
+            System.out.print("-----------------");
+            
         }
+  
+    }
 }

@@ -21,16 +21,26 @@ public class Cityscape extends JComponent
     private Fence bunnyfence;
     private House bunnyHouse;
     private Flowers carrotsAndFlowers;
+    private FlowerBox flowerBox1;
+    private SunAndMoon sunMoon;
+    private Bunny ophelia, fluffy;
     // define the Cityscape contructor and intiailize all instance variables
     // ...
     
     public Cityscape()
     {
+        
         bluesky = new Rectangle(30,30, 600, 500, new Color(186, 223, 232));
         grass = new Rectangle(30, 400, 600, 300, new Color(173, 227, 102));
         bunnyfence = new Fence(30, 330, new Color(255, 249, 227), new Color (255, 219, 128), new Color(255, 192, 173), new Color(255, 226, 214));
         bunnyHouse = new House(280, 310, new Color(233, 242, 247), new Color(204, 226, 240), new Color(101, 147, 173), new Color(133, 172, 201), new Color(178, 196, 141), new Color(66, 59, 43));
-        carrotsAndFlowers = new Flowers();    
+        carrotsAndFlowers = new Flowers();  
+        flowerBox1 = new FlowerBox(500, 420, new Color(212, 192, 138), new Color(145, 132, 94), new Color(117, 82, 45));
+        sunMoon = new SunAndMoon();
+        fluffy = new Bunny("fluffy.png");
+        ophelia = new Bunny("ophelia.png", - 130);
+        
+        
     }
     
     /**
@@ -58,6 +68,12 @@ public class Cityscape extends JComponent
         bunnyHouse.draw(page);
         
         carrotsAndFlowers.draw(page);
+        flowerBox1.draw(page);
+        
+        sunMoon.draw(page);
+        fluffy.draw(page);
+        
+        ophelia.draw(page);
     }
     
     /**
@@ -76,5 +92,9 @@ public class Cityscape extends JComponent
     
     public void run()
     {
+        Thread t= new Thread(fluffy);
+        t.start();
+        Thread t2= new Thread(ophelia);
+        t2.start();
     }
 }

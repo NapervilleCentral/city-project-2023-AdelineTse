@@ -6,62 +6,71 @@
     import javax.swing.JComponent;
     import java.awt.image.BufferedImage;
     import javax.imageio.ImageIO;
-    import java.util.Random;
+   
 /**
  * Write a description of class Bunny here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Bunny
+public class Bunny extends JComponent implements Runnable
 {
-    private BufferedImage fluffy, ophelia;
+    private BufferedImage bunny;
     private int running = 0;
-    private int x, y, randomGraphX, randomGraphY;
-    Random rand = new Random();
+    private double x=-290, y=0, height= 0;
+    
+    private String fileName;
     /**
      * Constructor for objects of class Bunny
      */
-    public Bunny()
+    public Bunny(String fileName)
     {
      
-       
-        
         try {
-            fluffy = ImageIO.read(new File("fluffy.png"));
-        }
-        catch (IOException e) {}
-        try {
-            ophelia = ImageIO.read(new File("ophelia.PNG"));
+            bunny = ImageIO.read(new File(fileName));
         }
         catch (IOException e) {}
     
     }
-    public void draw (Graphics2D page)
+    public Bunny(String fileName, double x)
     {
-        
-        page.drawImage(fluffy, 30, 408, null);
-        page.drawImage(ophelia, 90, 420, null);
-       
+     
+        try {
+            bunny = ImageIO.read(new File(fileName));
+        }
+        catch (IOException e) {}
+        this.x = x;
+    }
+    
+    public void nextFrame()
+    {  
+        repaint();
+    }
+    
+    public void draw (Graphics2D page)
+    {   
+        page.drawImage(bunny, (int)x, (int)y, null);
         
     }
     
     public void run()
-        {
-                int running  = 0;
+    {
+            int running  = 0;
             while(true){
                 
-                if(running % 2 == 0)
-                    x +=20;
-                else
-                    y -= 20;
-                running ++;
-                    try{
-                    Thread.sleep(17);
-                }catch (Exception e){}
+                x += 3;
+                if (x > 700) 
+                    x = 0;
+                y= 25*Math.sin(x%180 / 3.14159 )+450; 
                 
-                System.out.print(x+"-----------------");
-                //repaint();
+                try{
+                    Thread.sleep(50);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+                
+                System.out.println("x:" + x + " y" + y);
+                
             }
       
         }
