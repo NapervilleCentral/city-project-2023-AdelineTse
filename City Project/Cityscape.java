@@ -16,7 +16,7 @@ public class Cityscape extends JComponent
     // ...
     private final int HEIGHT_MIN = 100;
     private final int VARIANCE = 45;
-    
+   
     private Rectangle grass;
     private Fence bunnyfence;
     private House bunnyHouse;
@@ -24,6 +24,7 @@ public class Cityscape extends JComponent
     private FlowerBox flowerBox1;
     private DayAndNight dayNight;
     private Bunny ophelia, fluffy;
+    private Lights light;
     // define the Cityscape contructor and intiailize all instance variables
     // ...
     
@@ -37,6 +38,8 @@ public class Cityscape extends JComponent
         carrotsAndFlowers = new Flowers();  
         flowerBox1 = new FlowerBox(500, 420, new Color(212, 192, 138), new Color(145, 132, 94), new Color(117, 82, 45));
         dayNight = new DayAndNight(new Color(255, 241, 209), new Color(255, 210, 107), new Color(255, 246, 235));
+        light = new Lights(dayNight);
+        
         fluffy = new Bunny("fluffy.png");
         ophelia = new Bunny("ophelia.png", - 130);
         
@@ -46,6 +49,8 @@ public class Cityscape extends JComponent
         t2.start();
         Thread t3= new Thread(dayNight);
         t3.start();
+        Thread t4 = new Thread(light);
+        t4.start();
     }
     
     /**
@@ -58,11 +63,12 @@ public class Cityscape extends JComponent
     
     public void paintComponent(Graphics g)
     {
-        Graphics2D page = (Graphics2D) g;
         
+        Graphics2D page = (Graphics2D) g;
+        //page.setRenderHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         // invoke the draw method on each object in your Cityscape
         // ...
-        
+        dayNight.draw(page);
         
         grass.draw(page);
         
@@ -78,7 +84,7 @@ public class Cityscape extends JComponent
         fluffy.draw(page);
         
         ophelia.draw(page);
-        dayNight.draw(page);
+        
         
     }
     

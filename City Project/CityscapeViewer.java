@@ -13,7 +13,7 @@ import javax.swing.JComponent;
 public class CityscapeViewer
 {
     // the cityscape will be animated for 60 seconds
-    static final int ANIMATION_TIME_IN_SECONDS = 300;
+    static final int ANIMATION_TIME_IN_SECONDS = 5000;
    
     /**
      * main method for the program which creates and configures the frame for the program
@@ -52,7 +52,7 @@ public class CityscapeViewer
         {
             row.nextFrame();
             //it sleeps in milliseconds
-            Thread.sleep( 100 );//may have to adjust to look good?
+            Thread.sleep( 17 );//may have to adjust to look good?
         }
         
     }

@@ -19,7 +19,7 @@ public class DayAndNight extends JComponent implements Runnable
     private Color sun, sunOutline, moon;
     private double x=-40, y= 80;
     private Rectangle bluesky, darksky;
-    private BufferedImage offlamp, onlamp1, onlamp2;
+    private boolean day = false;
     /**
      * Constructor for objects of class SunAndMoon
      */
@@ -31,18 +31,6 @@ public class DayAndNight extends JComponent implements Runnable
         bluesky = new Rectangle(30,30, 600, 500, new Color(186, 223, 232));
         darksky = new Rectangle(30,30, 600, 500, new Color(72, 86, 125));
         
-        try {
-            offlamp = ImageIO.read(new File("offlamp.PNG"));
-        }
-        catch (IOException e) {}
-        try {
-            onlamp1 = ImageIO.read(new File("onlamp1.PNG"));
-        }
-        catch (IOException e) {}
-        try {
-            onlamp2 = ImageIO.read(new File("onlamp2.PNG"));
-        }
-        catch (IOException e) {}
     }
     public void nextFrame()
     {
@@ -54,7 +42,7 @@ public class DayAndNight extends JComponent implements Runnable
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public void draw(Graphics2D page)
+    public double draw(Graphics2D page)
     {
         // put your code here
         x = (400* Math.sin(theta))+300;
@@ -66,7 +54,7 @@ public class DayAndNight extends JComponent implements Runnable
             bluesky.draw(page);
             page.setColor(this.sun);
             page.fillOval((int)x, (int)y -500, 50, 50);
-            page.drawImage(offlamp, 500, 430, null);
+            day = true;
         }
         
         //nighttime
@@ -76,24 +64,24 @@ public class DayAndNight extends JComponent implements Runnable
             darksky.draw(page);
             page.setColor(this.moon);
             page.fillOval((int)x, (int)y, 50, 50);
-            page.drawImage(onlamp1, 500, 430, null);
-            //flickering lights
-            if (y % 10 == 0)
-            {
-                page.drawImage(onlamp2, 500, 430, null);
-            }
+            day = false;
         }
         //page.fillOval((int) (Math.sin(theta)), (int)(theta), 50, 50);
         
-        
+        return y;
     }
-     
+    
+    public boolean getDay()
+    {   
+        return day;
+    }
+    
     
     public void run()
     {
             int running  = 0;
         while(true){
-            theta+=0.06;
+            theta+=Math.PI/100;
                 try{
                 Thread.sleep(200);
             }catch (Exception e){}
