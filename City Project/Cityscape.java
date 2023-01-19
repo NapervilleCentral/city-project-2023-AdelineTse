@@ -17,12 +17,12 @@ public class Cityscape extends JComponent
     private final int HEIGHT_MIN = 100;
     private final int VARIANCE = 45;
     
-    private Rectangle bluesky, grass;
+    private Rectangle grass;
     private Fence bunnyfence;
     private House bunnyHouse;
     private Flowers carrotsAndFlowers;
     private FlowerBox flowerBox1;
-    private SunAndMoon sunMoon;
+    private DayAndNight dayNight;
     private Bunny ophelia, fluffy;
     // define the Cityscape contructor and intiailize all instance variables
     // ...
@@ -36,7 +36,7 @@ public class Cityscape extends JComponent
         bunnyHouse = new House(280, 310, new Color(233, 242, 247), new Color(204, 226, 240), new Color(101, 147, 173), new Color(133, 172, 201), new Color(178, 196, 141), new Color(66, 59, 43));
         carrotsAndFlowers = new Flowers();  
         flowerBox1 = new FlowerBox(500, 420, new Color(212, 192, 138), new Color(145, 132, 94), new Color(117, 82, 45));
-        sunMoon = new SunAndMoon(new Color(255, 241, 209), new Color(255, 210, 107), new Color(255, 246, 235));
+        dayNight = new DayAndNight(new Color(255, 241, 209), new Color(255, 210, 107), new Color(255, 246, 235));
         fluffy = new Bunny("fluffy.png");
         ophelia = new Bunny("ophelia.png", - 130);
         
@@ -44,7 +44,7 @@ public class Cityscape extends JComponent
         t.start();
         Thread t2= new Thread(ophelia);
         t2.start();
-        Thread t3= new Thread(sunMoon);
+        Thread t3= new Thread(dayNight);
         t3.start();
     }
     
@@ -63,7 +63,7 @@ public class Cityscape extends JComponent
         // invoke the draw method on each object in your Cityscape
         // ...
         
-        bluesky.draw(page);
+        
         grass.draw(page);
         
         page.setStroke(new BasicStroke(8));
@@ -78,8 +78,8 @@ public class Cityscape extends JComponent
         fluffy.draw(page);
         
         ophelia.draw(page);
+        dayNight.draw(page);
         
-        sunMoon.draw(page);
     }
     
     /**
