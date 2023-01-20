@@ -85,7 +85,7 @@ public class Cityscape extends JComponent
         
         ophelia.draw(page);
         
-        
+        light.draw(page);
     }
     
     /**

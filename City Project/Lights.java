@@ -17,7 +17,8 @@ public class Lights extends JComponent implements Runnable
     // instance variables - replace the example below with your own
     private Color windowOn, windowOff;
     private DayAndNight dayNight;
-    
+    private boolean ifDay;
+    private int flicker = 0; 
     private BufferedImage offlamp, onlamp1, onlamp2;
     /**
      * Constructor for objects of class SunAndMoon
@@ -50,20 +51,21 @@ public class Lights extends JComponent implements Runnable
      */
     public void draw(Graphics2D page)
     {
+        ifDay = this.dayNight.getDay();
         //daytime
-        if (y >= 400)
+        if (ifDay)
         {
-            page.drawImage(offlamp, 500, 430, null);
+            page.drawImage(offlamp, 320, 325, null);
         }
         
         //nighttime
-        if (y < 400)
+        if (!ifDay)
         {
-             page.drawImage(onlamp1, 500, 430, null);
+             page.drawImage(onlamp1, 320, 325, null);
             //flickering lights
-            if (y % 4 == 0)
+            if (flicker % 4 == 0)
             {
-                page.drawImage(onlamp2, 500, 430, null);
+                page.drawImage(onlamp2, 320, 325, null);
             }
         }
         //page.fillOval((int) (Math.sin(theta)), (int)(theta), 50, 50);
@@ -74,7 +76,6 @@ public class Lights extends JComponent implements Runnable
     public void run()
     {
         //makes lights flicker
-        int flicker = 0; 
         int running  = 0;
         while(true){
             flicker ++;
