@@ -30,7 +30,7 @@ public class FlowerBox
         this.box = box;
         this.outline = outline;
         this.dirt = dirt;
-
+        //import flowers
         try {
             flowers = ImageIO.read(new File("flowersInBox.png"));
         }
@@ -42,13 +42,15 @@ public class FlowerBox
     //-----------------------------------------------------------------
     public void draw (Graphics2D page)
     {
-
+        //make dirt
         page.setColor(this.dirt);
         page.fillOval(baseX+6, baseY-20, 90, 60);//dirt
-
+        
+        //make garden box
         page.setColor(this.box);
         page.fillRect(baseX, baseY, 100, 60);//box
-
+        
+        //lines on the gardenbox
         page.setColor(this.outline);
         for (int m = 0, j = 0; m <3; m++, j+=30)
         {   

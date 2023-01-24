@@ -25,9 +25,12 @@ public class DayAndNight extends JComponent implements Runnable
      */
     public DayAndNight(Color sun, Color sunOutline, Color moon)
     {
+        //initiate variables
         this.sun = sun;
         this.moon = moon;
         this.sunOutline = sunOutline;
+        
+        //initialize bluesky and darksky
         bluesky = new Rectangle(30,30, 600, 500, new Color(186, 223, 232));
         darksky = new Rectangle(30,30, 600, 500, new Color(72, 86, 125));
         
@@ -81,6 +84,7 @@ public class DayAndNight extends JComponent implements Runnable
     {
             int running  = 0;
         while(true){
+            //theta is the position of the sun/moon
             theta+=Math.PI/100;
                 try{
                 Thread.sleep(200);

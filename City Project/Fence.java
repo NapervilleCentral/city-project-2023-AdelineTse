@@ -42,7 +42,7 @@ public class Fence extends JComponent implements Runnable
           page.setColor(this.color3);
           page.fillRect(baseX, baseY+20, 600, 20);
           
-          
+          //while loop that generates fences until it reaches the point
           for (int m = 0, j = 0; m <12; m++, j+=50)
           {   
               page.setColor(this.color2);//fence outline
